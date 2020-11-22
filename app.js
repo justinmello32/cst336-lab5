@@ -1,9 +1,10 @@
 const express = require("express");
 const app = express();
+app.set("view engine", "ejs");
 
 //Routing
 app.get("/", funtion(req, res){
-	res.send("it works!");
+	res.render("index");
 });
 
 //Starting Server
