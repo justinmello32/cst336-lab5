@@ -1,10 +1,15 @@
 const express = require("express");
 const app = express();
 app.set("view engine", "ejs");
+const fetch = require("node-fetch");
 
 //Routing
-app.get("/", funtion(req, res){
-	res.render("index");
+app.get("/", async funtion(req, res){
+	let apiUrl = `https://api.unsplash.com/photos/random/?client_id=mXmDF87g_R0kGl7TH_rwOrLsnuIAVDBZTX0OHInloFs&featured=true&orientation=landscape`;
+	let response = await fetch(apiUrl);
+	let data = await response.json();
+
+	res.render("index", {"imageUrl": data.urls.small});
 });
 
 //Starting Server
