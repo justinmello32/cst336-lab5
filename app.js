@@ -4,7 +4,7 @@ app.set("view engine", "ejs");
 const fetch = require("node-fetch");
 
 //Routing
-app.get("/", async funtion(req, res){
+app.get("/", async function(req, res){
 	let apiUrl = `https://api.unsplash.com/photos/random/?client_id=mXmDF87g_R0kGl7TH_rwOrLsnuIAVDBZTX0OHInloFs&featured=true&orientation=landscape`;
 	let response = await fetch(apiUrl);
 	let data = await response.json();
