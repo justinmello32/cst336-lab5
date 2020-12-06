@@ -8,7 +8,11 @@
 			<button>Search</button>
 		</form>
 		<hr>
-		<img src='<%= imageUrl %>' width='200'/>
+		<% imageUrlArray.forEach(function(imageUrl){ %> 
+			
+			<img src='<%= imageUrl %>' width='200' height='200'/>
+		
+		<% }); %>
 
 
 
